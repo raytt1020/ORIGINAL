@@ -11,4 +11,18 @@ class Idol{
     var group: String!
     var imageName: String!
     var zimusyo: String!
+    var part: String!
+    init(name: String, imageName: String, group: String, zimusyo: String, part: String) {
+        self.name = name
+        self.imageName = imageName
+        self.group = group
+        self.zimusyo = zimusyo
+        self.part = part
+    }
+    func getImage() ->UIImage{
+        return UIImage(named: imageName)!
+    }
+    func getImageWithURL() ->UIImage{
+        return UIImage(contentsOfFile: imageName) ?? UIImage()
+    }
 }
